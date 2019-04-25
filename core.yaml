@@ -20,6 +20,8 @@
           - curl
           - dconf-editor
           - git
+          - git-lfs
+          - gitk
           - gnome-tweaks
           - htop
           - jq
