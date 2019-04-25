@@ -1,0 +1,17 @@
+- name: Development at Microsoft
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Download Microsoft internal CA certificate
+      become: yes
+      get_url:
+        url: https://avalanchebuildsupport.blob.core.windows.net/files/microsoft-internal-ca.D17697.crt
+        dest: /usr/local/share/ca-certificates/microsoft-internal-ca.D17697.crt
+        mode: 0644
+      register: ca_download
+
+    - name: Trust Microsoft internal CA certificate
+      become: yes
+      command: update-ca-certificates
+      when: ca_download.changed
