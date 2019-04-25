@@ -18,7 +18,7 @@
           function writeCwdInTitlebar() {
             case "$TERM" in
               xterm*|rxvt*)
-                PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+                echo -ne "\e]0;`whoami`@`hostname`: `dirs +0`\a"
                 ;;
               *)
                 ;;
@@ -47,5 +47,3 @@
           }
 
           export PROMPT_COMMAND="clear_newline;${PROMPT_COMMAND}"
-
-          trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG
