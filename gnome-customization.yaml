@@ -3,6 +3,10 @@
   connection: local
 
   vars:
+    apt_override:
+      # snwh doesn't support disco yet, so hold it back to cosmic until it does
+      snwh_distro: "{{ (ansible_distribution_release == 'disco') | ternary('cosmic', ansible_distribution_release) }}"
+
     gnome_extensions:
       # Dash to Panel (Windows-style bottom task bar)
       - name: dash-to-panel@jderose9.github.com
@@ -65,7 +69,7 @@
     - name: Add Gnome themes APT package repository
       become: yes
       apt_repository:
-        repo: ppa:snwh/ppa
+        repo: deb http://ppa.launchpad.net/snwh/ppa/ubuntu {{ apt_override.snwh_distro }} main
         filename: snwh
         update_cache: no
       register: apt_repository
@@ -89,7 +93,9 @@
     - name: Install PIP
       become: yes
       apt:
-        package: python-pip
+        package:
+          - python-pip
+          - python3-pip
 
     - name: Install psutil Python package
       become: yes
