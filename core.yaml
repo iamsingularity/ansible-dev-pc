@@ -25,4 +25,10 @@
           - gnome-tweaks
           - htop
           - jq
+          - snapd
           - xclip
+
+    - name: Add /snap/bin to PATH
+      lineinfile:
+        path: ~/.bashrc
+        line: export PATH=$PATH:/snap/bin
