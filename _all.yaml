@@ -30,7 +30,7 @@
 - import_playbook: kubectl-customization.yaml      # Bash aliases for kubectl
 - import_playbook: kvm.yaml                        # Virtualization tools
 - import_playbook: microsoft-dev.yaml              # Microsoft internal dev certificates
-- import_playbook: nvm.yaml                        # Node version manager
+- import_playbook: nodejs.yaml                     # NodeJS and nvm (Node Version Manager)
 - import_playbook: powershell-core.yaml            # PowerShell Core (used in automation)
 - import_playbook: slack.yaml                      # Slack Desktop app
 - import_playbook: remmina.yaml                    # RDP/X/VNC/SSH client
