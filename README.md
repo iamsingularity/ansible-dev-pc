@@ -2,11 +2,11 @@
 
 This repository contains useful scripts to set up a Linux development machine. They assume Ubuntu 18.04 or later, and have been tested with the following OSes:
 
-- Ubuntu
+- Ubuntu ([download](https://www.ubuntu.com/download/desktop))
   - 18.04 (bionic)
   - 18.10 (cosmic)
   - 19.04 (disco)
-- Pop!_OS
+- Pop!_OS ([download](https://system76.com/pop))
   - 18.04
   - 18.10
   - 19.04
