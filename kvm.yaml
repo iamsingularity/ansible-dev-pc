@@ -10,6 +10,7 @@
           - bridge-utils
           - libvirt-clients
           - libvirt-daemon-system
+          - ovmf
           - qemu-kvm
           - virt-manager
 
